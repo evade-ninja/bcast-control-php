@@ -1,0 +1,9 @@
+
+img.preview{
+   max-width: 100%;
+}
+
+img.preview-cam{
+   border-top-left-radius: 0.375rem;
+   border-top-right-radius: 0.375rem;
+}
