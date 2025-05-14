@@ -7,6 +7,7 @@
    <title>Broadcast Controller</title>
    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet"
       integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7" crossorigin="anonymous">
+   <script src="https://code.jquery.com/jquery-3.7.1.slim.min.js"></script>
    <link rel="stylesheet" href="styles.css">
 </head>
 
@@ -14,47 +15,12 @@
    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
       <div class="container">
          <a class="navbar-brand" href="#">Controller</a>
-         <!-- <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
-            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-         </button> -->
 
          <div class="d-flex">
-            <span id="bcast-stopped" class="badge text-bg-danger .fs-5 text">Stopped</span>
+            <span id="bcast-unknown" class="badge text-bg-secondary">Unknown Status</span>
+            <span id="bcast-started" class="badge text-bg-success" style="display:none;">Started</span>
+            <span id="bcast-stopped" class="badge text-bg-danger" style="display:none;">Stopped</span>
          </div>
-
-         
-         <!-- <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-               <li class="nav-item">
-                  <a class="nav-link active" aria-current="page" href="#">Home</a>
-               </li>
-               <li class="nav-item">
-                  <a class="nav-link" href="#">Link</a>
-               </li>
-               <li class="nav-item dropdown">
-                  <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
-                     data-bs-toggle="dropdown" aria-expanded="false">
-                     Dropdown
-                  </a>
-                  <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                     <li><a class="dropdown-item" href="#">Action</a></li>
-                     <li><a class="dropdown-item" href="#">Another action</a></li>
-                     <li>
-                        <hr class="dropdown-divider">
-                     </li>
-                     <li><a class="dropdown-item" href="#">Something else here</a></li>
-                  </ul>
-               </li>
-               <li class="nav-item">
-                  <a class="nav-link disabled">Disabled</a>
-               </li>
-            </ul>
-            <form class="d-flex" role="search">
-               <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-               <button class="btn btn-outline-success" type="submit">Search</button>
-            </form>
-         </div> -->
       </div>
    </nav>
 
@@ -66,10 +32,10 @@
          <div class="card-body">
             <div class="btn-toolbar" role="toolbar" aria-label="Toolbar with button groups">
                <div class="btn-group me-1" role="group" aria-label="First group">
-                  <button type="button" class="btn btn-success">Start</button>
+                  <button type="button" class="btn btn-success" disabled>Start</button>
                </div>
                <div class="btn-group me-1" role="group" aria-label="Second group">
-                  <button type="button" class="btn btn-danger">Stop</button>
+                  <button type="button" class="btn btn-danger" disabled>Stop</button>
                </div>
                <div class="btn-group me-1" role="group" aria-label="Third group">
                   <button type="button" class="btn btn-info">Normal</button>
