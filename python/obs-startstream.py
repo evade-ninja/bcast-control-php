@@ -11,3 +11,5 @@ obs = obsws(config['server'], config['port'], config['password'])
 obs.connect()
 
 obs.call(requests.StartStream())
+
+print("started")
