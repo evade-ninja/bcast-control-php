@@ -1,6 +1,7 @@
 var config =
 {
-   "camera_uri": "/camera.php?cam=",
+   "camera_uri": "/ptz.php?cam=",
+   "preview_uri": "/cam.jpg",
    "cameras": [
       {
          "title": "Default View",
