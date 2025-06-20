@@ -1,6 +1,6 @@
 var config =
 {
-   "camera_uri": "http://192.168.108.2",
+   "camera_uri": "/camera.php?cam=",
    "cameras": [
       {
          "title": "Default View",
@@ -103,5 +103,23 @@ var config =
          "img": "camera-placeholder.png"
       }
    ],
-   "template": "<a onclick='PTZ($pos);'><div class='col'><div class='card shadow-sm'><img src='$img' class='preview preview-cam' alt='...'><div class='card-body'><p class='card-text'>$title</p></div></div></div></a>"
+   "template": "<a onclick='PTZ($pos);'><div class='col'><div class='card shadow-sm'><img src='$img' class='preview preview-cam' alt='...'><div class='card-body'><p class='card-text'>$title</p></div></div></div></a>",
+   "streamKeys":[ 
+      {
+         "key": "sh1",
+         "name":"Spanish Highlands 1st"
+      },
+      {
+         "key":"sh2",
+         "name":"Spanish Highlands 2nd"
+      },
+      {
+         "key":"sh3",
+         "name":"Spanish Highlands 3rd"
+      },
+      {
+         "key":"mp3",
+         "name":"Maple Park 3rd"
+      }
+   ]
 };

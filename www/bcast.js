@@ -10,6 +10,17 @@ function loadCameras() {
    config.cameras.forEach(makeCamera);
 }
 
+function loadKeys(){
+   config.streamKeys.forEach(loadKey);
+}
+
+function loadKey(k){
+   $('<option>', {
+      value: k.key,
+      text: k.name
+   }).appendTo('#keys');
+}
+
 function makeCamera(c) {
    console.log(c.title + " " + c.pos + c.img);
    var cam = config.template;
@@ -80,13 +91,19 @@ function startStream() {
    clearStatusClasses();
    $('#streamstate').addClass("btn-outline-danger");
    $('#streamstate').html("Starting Stream");
-   $.post("/start.php", function (data) {
+   
+   $.post("/setstart.php?key=" + $("#keys").val(), function (data) {
       if (data.Result == "200") {
          $('#startbutton').prop('disabled', true);
          $('#stopbutton').prop('disabled', false);
       }
+      else if(data.Result == 400) {
+         alert("FAILURE!");
+      }
    });
    startstop = false;
+
+   startModal.hide();
 }
 
 function stopStream() {
@@ -103,6 +120,7 @@ function stopStream() {
       }
    });
    startstop = false;
+   stopModal.hide();
 }
 
 function getPreview() {
@@ -134,7 +152,9 @@ function refreshPTZ() {
 }
 
 function PTZ(pos) {
-   $.post(config.camera_uri + "/api/v1/ptzControl.lua?Action=load-preset&Id=" + pos, function (data) {
+   //"http://192.168.109.194/cgi-bin/ptzctrl.cgi?ptzcmd&poscall&0"
+   //$.post(config.camera_uri + "/api/v1/ptzControl.lua?Action=load-preset&Id=" + pos, function (data) {
+   $.post(config.camera_uri + pos, function (data) {
 
    });
    refresh = setInterval(refreshPTZ, 1000);
@@ -143,5 +163,16 @@ function PTZ(pos) {
 
 loadCameras();
 getStatus();
+loadKeys();
+
+const startModal = new bootstrap.Modal("#startModal", {
+   keyboard: false
+});
+
+const stopModal = new bootstrap.Modal("#stopModal", {
+   keyboard: false
+});
+
+
 //getPreview();
 //var previewTimer = setInterval(getPreview, 10000);

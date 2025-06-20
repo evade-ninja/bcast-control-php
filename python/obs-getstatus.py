@@ -22,19 +22,20 @@ currentScene = obs.call(requests.GetCurrentProgramScene())
 streamStatus = obs.call(requests.GetStreamStatus())
 #print(streamStatus.datain['outputActive'])
 
+currentStreamSettings = obs.call(requests.GetStreamServiceSettings())
+#print(currentStreamSettings)
+
+streamKey = "unknown"
+
+for skey in config["streamkeys"]:
+    if skey["value"] == currentStreamSettings.datain["streamServiceSettings"]["key"]:
+        streamKey = skey["key"]
+        break
+
 data = {
     "currentScene": currentScene.datain['currentProgramSceneName'],
-    "streamingStatus": streamStatus.datain['outputActive']
+    "streamingStatus": streamStatus.datain['outputActive'],
+    "streamKey": streamKey
 }
 
 print(json.dumps(data))
-
-
-
-
-
-#new_scene = sys.argv[1]
-
-#print("Set scene to: " + new_scene)
-
-#obs.call(requests.SetCurrentProgramScene(sceneName=new_scene))
