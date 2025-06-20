@@ -123,7 +123,7 @@ function stopStream() {
 
 function getPreview() {
    d = new Date();
-   $("#preview").attr("src", config.camera_uri + "/actions/snap.lua?time=" + d.getTime());
+   $("#preview").attr("src", config.preview_uri + "?time=" + d.getTime());
 }
 
 function sacramentTime() {
@@ -145,7 +145,7 @@ function speakerTime() {
 }
 
 function refreshPTZ() {
-   //getPreview();
+   getPreview();
    clearInterval(refresh);
 }
 
@@ -172,5 +172,5 @@ const stopModal = new bootstrap.Modal("#stopModal", {
 });
 
 
-//getPreview();
-//var previewTimer = setInterval(getPreview, 10000);
+getPreview();
+var previewTimer = setInterval(getPreview, 1000);
