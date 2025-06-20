@@ -93,16 +93,14 @@ function startStream() {
    $('#streamstate').html("Starting Stream");
    
    $.post("/setstart.php?key=" + $("#keys").val(), function (data) {
-      if (data.Result == "200") {
-         $('#startbutton').prop('disabled', true);
-         $('#stopbutton').prop('disabled', false);
-      }
-      else if(data.Result == 400) {
-         alert("FAILURE!");
-      }
+      //success!
+      $('#startbutton').prop('disabled', true);
+      $('#stopbutton').prop('disabled', false);
+   }
+   ).fail(function(error){
+      alert("Failed to start stream!");
    });
    startstop = false;
-
    startModal.hide();
 }
 
