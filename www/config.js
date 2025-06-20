@@ -4,107 +4,102 @@ var config =
    "preview_uri": "/cam.jpg",
    "cameras": [
       {
-         "title": "Default View",
-         "pos": 0,
-         "img": "camera-placeholder.png"
-      },
-      {
          "title": "Speaker View",
-         "pos": 1,
-         "img": "camera-placeholder.png"
+         "pos": 0,
+         "img": "cam-speaker.jpg"
       },
       {
          "title": "Closer Speaker",
-         "pos": 2,
-         "img": "camera-placeholder.png"
+         "pos": 61,
+         "img": "cam-closer.jpg"
       },
       {
          "title": "Speaker Tight",
-         "pos": 3,
-         "img": "camera-placeholder.png"
+         "pos": 62,
+         "img": "cam-tight.jpg"
       },
       {
          "title": "Stand Left",
-         "pos": 4,
-         "img": "camera-placeholder.png"
+         "pos": 63,
+         "img": "cam-standleft.jpg"
       },
       {
          "title": "Stand Right",
-         "pos": 5,
-         "img": "camera-placeholder.png"
+         "pos": 64,
+         "img": "cam-standright.jpg"
       },
       {
          "title": "Full Stand",
-         "pos": 6,
-         "img": "camera-placeholder.png"
+         "pos": 65,
+         "img": "cam-standfull.jpg"
       },
       {
          "title": "Primary Program",
-         "pos": 7,
-         "img": "camera-placeholder.png"
+         "pos": 66,
+         "img": "cam-primary.jpg"
       },
       {
          "title": "Stand+Sac Table",
-         "pos": 8,
-         "img": "camera-placeholder.png"
+         "pos": 67,
+         "img": "cam-standplussac.jpg"
       },
       {
          "title": "Front Left",
-         "pos": 9,
-         "img": "camera-placeholder.png"
+         "pos": 68,
+         "img": "cam-frontleft.jpg"
       },
       {
          "title": "Front Right",
-         "pos": 10,
-         "img": "camera-placeholder.png"
+         "pos": 69,
+         "img": "cam-frontright.jpg"
       },
       {
          "title": "Piano",
-         "pos": 11,
-         "img": "camera-placeholder.png"
+         "pos": 70,
+         "img": "cam-piano.jpg"
       },
       {
          "title": "Stake Chorister",
-         "pos": 12,
-         "img": "camera-placeholder.png"
+         "pos": 71,
+         "img": "cam-stakechorister.jpg"
       },
       {
          "title": "Ward Chorister",
-         "pos": 13,
-         "img": "camera-placeholder.png"
+         "pos": 72,
+         "img": "cam-wardchorister.jpg"
       },
       {
          "title": "Organist",
-         "pos": 14,
-         "img": "camera-placeholder.png"
+         "pos": 73,
+         "img": "cam-organ.jpg"
       },
       {
          "title": "Wider Speaker",
-         "pos": 15,
-         "img": "camera-placeholder.png"
+         "pos": 74,
+         "img": "cam-widerspeaker.jpg"
       },
       {
          "title": "Musical Number - Piano+Pulpit",
-         "pos": 16,
-         "img": "camera-placeholder.png"
+         "pos": 75,
+         "img": "cam-musicalpp.jpg"
       },
       {
          "title": "Musical Number - West of Pulpit",
-         "pos": 17,
-         "img": "camera-placeholder.png"
+         "pos": 76,
+         "img": "cam-musical-frontleft.jpg"
       },
       {
          "title": "Piano/Violin",
-         "pos": 18,
-         "img": "camera-placeholder.png"
+         "pos": 77,
+         "img": "cam-musicalviolin.jpg"
       },
       {
          "title": "Stake Choir",
-         "pos": 19,
-         "img": "camera-placeholder.png"
+         "pos": 78,
+         "img": "cam-stkchoir.jpg"
       }
    ],
-   "template": "<a onclick='PTZ($pos);'><div class='col'><div class='card shadow-sm'><img src='$img' class='preview preview-cam' alt='...'><div class='card-body'><p class='card-text'>$title</p></div></div></div></a>",
+   "template": "<a onclick='PTZ($pos);'><div class='col'><div class='card shadow-sm'><img src='/img/$img' class='preview preview-cam' alt='...'><div class='card-body'><p class='card-text'>$title</p></div></div></div></a>",
    "streamKeys":[ 
       {
          "key": "sh1",

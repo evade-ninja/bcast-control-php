@@ -2,6 +2,7 @@
 
 var startstop = false;
 var refresh;
+var keyName = "unknown";
 
 console.log(config);
 
@@ -19,6 +20,17 @@ function loadKey(k){
       value: k.key,
       text: k.name
    }).appendTo('#keys');
+}
+
+function getKeyName(k){
+   let keyName = "unknown";
+   config.streamKeys.forEach(function(o){
+      if(o.key == k){
+         keyName = o.name;
+         return keyName;
+      }
+   });
+   return keyName;
 }
 
 function makeCamera(c) {
@@ -55,7 +67,10 @@ function getStatus() {
       }
       else if (data.streamingStatus == true) {
          $('#streamstate').addClass("text-bg-success");
-         $('#streamstate').html("Streaming");
+
+         keyName = getKeyName(data.streamKey);
+
+         $('#streamstate').html("Streaming " + keyName);
          $('#startbutton').prop('disabled', true);
          $('#stopbutton').prop('disabled', false);
       }
@@ -72,6 +87,8 @@ function getStatus() {
          $('#sacrament').show();
          $('#preview').hide();
       }
+
+
 
    })
       .fail(function () {
@@ -96,6 +113,7 @@ function startStream() {
       //success!
       $('#startbutton').prop('disabled', true);
       $('#stopbutton').prop('disabled', false);
+      keyName = $("#keys option:selected").text();
    }
    ).fail(function(error){
       alert("Failed to start stream!");
