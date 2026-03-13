@@ -4,10 +4,10 @@
 
 import json
 from obswebsocket import obsws, events, requests
+import os
 import sys
 
-
-with open('./config.json','r') as c:
+with open(os.path.dirname(os.path.abspath(__file__)) + '/config.json','r') as c:
 #with open('./python/config.json') as c:
     config = json.load(c)
 

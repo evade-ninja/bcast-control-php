@@ -2,10 +2,10 @@
 
 import json
 from obswebsocket import obsws, events, requests
-import sys
+import sys, os
 
 
-with open('./config.json') as c:
+with open(os.path.dirname(os.path.abspath(__file__)) + '/config.json','r') as c:
     config = json.load(c)
 
 obs = obsws(config['server'], config['port'], config['password'])
