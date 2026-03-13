@@ -162,6 +162,15 @@ function speakerTime() {
    });
 }
 
+function blankTime() {
+   $.post("/set-blank.php", function (data) {
+      if (data.Result == "200") {
+         $("#sacrament").hide();
+         $("#preview").hide();
+      }
+   });
+}
+
 function refreshPTZ() {
    getPreview();
    clearInterval(refresh);
