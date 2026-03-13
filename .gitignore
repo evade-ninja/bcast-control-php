@@ -3,3 +3,4 @@ config.json
 cpy.sh
 *config.js*
 vars.php
+www/img/*.jpg
