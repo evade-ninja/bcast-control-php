@@ -1,4 +1,4 @@
-#!/var/www/obswebsock/bin/python
+#!/usr/bin/python3
 
 import json
 from obswebsocket import obsws, requests

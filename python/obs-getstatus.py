@@ -1,4 +1,4 @@
-#!/var/www/obswebsock/bin/python
+#!/usr/bin/python3
 
 #Prints a JSON object containing the current status of the broadcast
 
