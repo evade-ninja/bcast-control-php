@@ -7,7 +7,7 @@ from obswebsocket import obsws, events, requests
 import sys
 import time
 
-with open('/var/www/config.json') as c:
+with open('./config.json','r') as c:
 #with open('./python/config.json') as c:
     config = json.load(c)
 

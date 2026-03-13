@@ -5,7 +5,7 @@ from obswebsocket import obsws, events, requests
 import sys
 
 
-with open('/var/www/config.json') as c:
+with open('./config.json') as c:
     config = json.load(c)
 
 obs = obsws(config['server'], config['port'], config['password'])
