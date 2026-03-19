@@ -4,3 +4,4 @@ cpy.sh
 *config.js*
 vars.php
 www/img/*.jpg
+get_cert_vars.sh
