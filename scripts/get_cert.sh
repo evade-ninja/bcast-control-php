@@ -6,7 +6,7 @@ if ! openssl x509 -in "$local_cert_path/$cert_name" -noout -checkend "$threshold
   echo "Certificate file expires within 30 days (or is expired): $cert_path. LETS RENEW!"
   wget -N $cert_www/$cert_name -P /tmp/
 
-  if [[ -d "tmp/$cert_name" ]]
+  if [[ -d "/tmp/$cert_name" ]]
   then
     echo "New cert available"
     mv -f /tmp/$cert_name $local_cert_path/
