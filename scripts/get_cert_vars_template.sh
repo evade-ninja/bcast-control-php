@@ -1,4 +1,4 @@
-#!/bin/bash#!/usr/bin/env bash
+#!/usr/bin/env bash
 cert_www="https://your-cert-location.local"
 cert_name="interweb.crt"
 local_cert_path="/etc/ssl/private"
